@@ -33,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int r = (int) (Math.random() * 10000);
-                String link = "https://cataas.com/c";
+                String link = "https://cataas.com/cat";
                 if (!tagStr.isEmpty()) {
                     link += ("/" + tagStr);
                 }
                 String sayStr = say.getText().toString();
                 if (!sayStr.isEmpty()) {
-                    link += ("/s/" + sayStr);
+                    link += ("/says/" + sayStr);
                 }
                 Log.d("meow", link);
                 Glide.with(getApplicationContext())
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         String tagList[] = {"None", "#Cute", "#Funny", "#Fluffy", "#Sleepy", "#Orange", "#White", "#Black"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, tagList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, tagList);
         tag.setAdapter(adapter);
         tag.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
